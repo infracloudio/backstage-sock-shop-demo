@@ -4,5 +4,7 @@ metadata:
   name: my-component-api
 spec:
   type: grpc
+  lifecycle: development
+  owner: user:guest  
   definition:
     $text: https://github.com/infracloudio/backstage-sock-shop-demo/edit/master/backstage/api/carts-api.yaml
