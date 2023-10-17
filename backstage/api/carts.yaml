@@ -3,7 +3,7 @@ kind: API
 metadata:
   name: my-component-api
 spec:
-  type: grpc
+  type: swagger
   lifecycle: development
   owner: user:guest  
   definition:
