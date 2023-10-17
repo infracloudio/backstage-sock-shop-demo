@@ -3,7 +3,7 @@ kind: API
 metadata:
   name: my-component-api
 spec:
-  type: swagger
+  type: openapi
   lifecycle: development
   owner: user:guest  
   definition:
