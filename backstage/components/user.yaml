@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: component-user
+  annotations:
+    backstage.io/kubernetes-id: component-user
+spec:
+  type: service
+  lifecycle: development
+  owner: users:guests
