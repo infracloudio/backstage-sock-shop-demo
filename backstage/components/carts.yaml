@@ -7,6 +7,6 @@ metadata:
 spec:
   type: service
   lifecycle: development
-  owner: users:guests
+  owner: users:guest
   providesApis:
     - carts-api
