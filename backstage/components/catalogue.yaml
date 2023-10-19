@@ -7,6 +7,6 @@ metadata:
 spec:
   type: service
   lifecycle: development
-  owner: users:guest
+  owner: guest
   providesApis:
     - catalogue-api  
