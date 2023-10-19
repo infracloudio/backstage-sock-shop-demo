@@ -8,3 +8,5 @@ spec:
   type: service
   lifecycle: development
   owner: users:guests
+  providesApis:
+    - catalogue-api  
