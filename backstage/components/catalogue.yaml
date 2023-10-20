@@ -9,4 +9,6 @@ spec:
   lifecycle: development
   owner: guest
   providesApis:
-    - catalogue-api  
+    - catalogue-api
+  dependsOn:
+    - resource:default/catalogue-db

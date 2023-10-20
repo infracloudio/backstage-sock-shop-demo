@@ -9,4 +9,6 @@ spec:
   lifecycle: development
   owner: guest
   providesApis:
-    - order-api    
+    - order-api
+  dependsOn:
+    - resource:default/orders-db

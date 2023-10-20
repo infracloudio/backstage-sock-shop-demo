@@ -9,4 +9,6 @@ spec:
   lifecycle: development
   owner: guest
   providesApis:
-    - user-api      
+    - user-api
+  dependsOn:
+    - resource:default/user-db
