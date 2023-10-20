@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: orders-db
-  description: Stores Order details
+  name: catalogue-db
+  description: Stores Catalogue details
 spec:
   type: database
   owner: guests
