@@ -1,97 +1,96 @@
-swagger: '2.0'
+openapi: 3.0.1
 info:
-  version: ''
   title: Carts and items
   description: Carts and items resources
   license:
     name: MIT
     url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
-host: carts
-basePath: "/"
-securityDefinitions: {}
-schemes:
-- http
-consumes:
-- application/json;charset=UTF-8
-- text/plain
+  version: ""
 servers:
-  - url: http://localhost/
+- url: http://localhost/
 paths:
-  "/carts/{customerId}":
+  /carts/{customerId}:
     get:
-      description: ''
       operationId: Get cart
-      produces:
-      - application/json;charset=UTF-8
       parameters:
       - name: customerId
         in: path
         required: true
-        type: string
-        x-example: '1'
+        schema:
+          type: string
+        example: "1"
       responses:
-        '200':
+        200:
           description: Returns cart
-          schema:
-            "$ref": "#/definitions/Getcartresponse"
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/Getcartresponse'
     delete:
-      description: ''
       operationId: Delete cart
       parameters:
       - name: customerId
         in: path
         required: true
-        type: string
-        x-example: '1'
+        schema:
+          type: string
+        example: "1"
       responses:
-        '202':
-          description: ''
-  "/carts/{customerId}/items":
+        202:
+          description: ""
+          content: {}
+  /carts/{customerId}/items:
     post:
-      description: ''
       operationId: Add an item to the cart
-      produces:
-      - application/json;charset=UTF-8
       parameters:
       - name: customerId
         in: path
         required: true
-        type: string
-        x-example: 579f21ae98684924944651bf
-      - name: body
-        in: body
-        required: true
         schema:
-          "$ref": "#/definitions/CartItem"
-          example:
-            itemId: 819e1fbf-8b7e-4f6d-811f-693534916a8b
-            quantity: 20
-            unitPrice: 99
+          type: string
+        example: 579f21ae98684924944651bf
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: '#/components/schemas/CartItem'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/CartItem'
+        required: true
       responses:
-        '201':
-          description: ''
-          schema:
-            "$ref": "#/definitions/CartItem"
+        201:
+          description: ""
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/CartItem'
+      x-codegen-request-body-name: body
     patch:
       description: Update an item
       operationId: Update item
-      produces:
-      - application/json;charset=UTF-8
       parameters:
       - name: customerId
         in: path
         required: true
-        type: string
-        x-example: 579f21ae98684924944651bf
-      - name: body
-        in: body
-        required: true
         schema:
-          type: object
+          type: string
+        example: 579f21ae98684924944651bf
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              type: object
+          text/plain:
+            schema:
+              type: object
+        required: true
       responses:
-        '200':
-          description: ''
-  "/carts/{customerId}/items/{itemId}":
+        200:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: body
+  /carts/{customerId}/items/{itemId}:
     delete:
       description: Delete cart item
       operationId: delete
@@ -99,36 +98,40 @@ paths:
       - name: itemId
         in: path
         required: true
-        type: string
-        x-example: 819e1fbf-8b7e-4f6d-811f-693534916a8b
+        schema:
+          type: string
+        example: 819e1fbf-8b7e-4f6d-811f-693534916a8b
       - name: customerId
         in: path
         required: true
-        type: string
-        x-example: 579f21ae98684924944651bf
+        schema:
+          type: string
+        example: 579f21ae98684924944651bf
       responses:
-        '202':
+        202:
           description: Delete response
-definitions:
-  Getcartresponse:
-    title: Get cart response
-    type: object
-    properties:
-      customerId:
-        type: string
-    required:
-    - customerId
-  CartItem:
-    title: Cart item
-    type: object
-    properties:
-      itemId:
-        type: string
-      quantity:
-        type: integer
-      unitPrice:
-        type: number
-    required:
-    - itemId
-    - quantity
-    - unitPrice
+          content: {}
+components:
+  schemas:
+    Getcartresponse:
+      title: Get cart response
+      required:
+      - customerId
+      type: object
+      properties:
+        customerId:
+          type: string
+    CartItem:
+      title: Cart item
+      required:
+      - itemId
+      - quantity
+      - unitPrice
+      type: object
+      properties:
+        itemId:
+          type: string
+        quantity:
+          type: integer
+        unitPrice:
+          type: number
