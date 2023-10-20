@@ -10,3 +10,5 @@ spec:
   owner: guest
   providesApis:
     - carts-api
+  dependsOn:
+    - resource:default/carts-db

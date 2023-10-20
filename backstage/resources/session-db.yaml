@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: session-db
+  description: Stores Session details
+spec:
+  type: database
+  owner: guests
+  system: sock-shop
