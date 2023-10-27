@@ -4,6 +4,7 @@ metadata:
   name: component-carts
   annotations:
     backstage.io/kubernetes-id: component-carts
+    argocd/app-name: sock-shop
 spec:
   type: service
   lifecycle: development
