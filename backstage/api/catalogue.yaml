@@ -2,6 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: catalogue-api
+  annotations:
+    backstage.io/kubernetes-id: api-catalogue   
 spec:
   type: openapi
   lifecycle: development

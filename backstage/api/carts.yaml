@@ -2,6 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: carts-api
+  annotations:
+    backstage.io/kubernetes-id: api-carts  
 spec:
   type: openapi
   lifecycle: development
