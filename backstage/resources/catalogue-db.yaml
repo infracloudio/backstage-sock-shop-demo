@@ -5,5 +5,5 @@ metadata:
   description: Stores Catalogue details
 spec:
   type: database
-  owner: guests
+  owner: guest
   system: sock-shop
