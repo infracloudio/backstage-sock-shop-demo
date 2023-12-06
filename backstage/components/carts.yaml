@@ -6,7 +6,7 @@ metadata:
     backstage.io/kubernetes-id: component-carts
     argocd/app-name: sock-shop
     prometheus.io/rule: alertmanager_alerts
-    prometheus.io/alerts: KubePodNotReady
+    prometheus.io/alerts: KubeControllerManagerDown
 spec:
   type: service
   lifecycle: development
