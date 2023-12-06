@@ -5,7 +5,7 @@ metadata:
   annotations:
     backstage.io/kubernetes-id: component-carts
     argocd/app-name: sock-shop
-    prometheus.io/alert: all
+    prometheus.io/rule: memUsage
 spec:
   type: service
   lifecycle: development
