@@ -6,7 +6,7 @@ metadata:
     backstage.io/kubernetes-id: component-carts
     argocd/app-name: sock-shop
     prometheus.io/rule: ':node_memory_MemAvailable_bytes:sum,cluster:node_cpu:ratio'
-    prometheus.io/alerts: 'Watchdog'
+    prometheus.io/alert: 'Excessive Memory Usage'
 spec:
   type: service
   lifecycle: development
