@@ -6,7 +6,7 @@ metadata:
     backstage.io/kubernetes-id: component-carts
     argocd/app-name: sock-shop
     prometheus.io/rule: ':node_memory_MemAvailable_bytes:sum,cluster:node_cpu:ratio'
-    prometheus.io/alerts: 'KubeSchedulerDownseverity'
+    prometheus.io/alerts: 'Watchdog'
 spec:
   type: service
   lifecycle: development
